@@ -10,5 +10,5 @@ enjoy
 # Debian install python deps
 
 ## python3
-<b>bash:~/ apt-get install python3-serial</b>
-<b>bash:~/ apt-get install python3-pyqt5</b>
+´´´bash:~/ apt-get install python3-serial
+´´´bash:~/ apt-get install python3-pyqt5
