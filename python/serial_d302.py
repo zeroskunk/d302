@@ -30,17 +30,17 @@ class d302():
     def open_port(self, port='/dev/ttyUSB0'):
         try:
             self.ser.baudrate = 4800
-            self.ser.xonoff = 0
             self.ser.xonxoff = 0
             self.ser.rtscts = False
             self.ser.bytesize = serial.EIGHTBITS
             self.ser.timeout = 3
-            #self.ser.write_timeout = 2
-            #self.ser.dsrdtr = True
-            #self.ser.rtscts = True
+            self.ser.write_timeout = 2
+            self.ser.dsrdtr = True
+            self.ser.rtscts = True
             self.ser.port = port
             self.ser.open()
-            #self.initial_message()
+            self.initial_message()
+    
             return True
         except:
             return False
@@ -60,7 +60,7 @@ class d302():
         self.ser.write(initString)
         answerString = self.ser.read(6)
         answerString = binascii.hexlify(answerString)
-        #print (answerString)
+        print (answerString)
         return str(answerString, 'ascii')
         
     def read_message(self):
