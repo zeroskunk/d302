@@ -13,5 +13,18 @@ enjoy
 ```
 bash:~/ apt-get install python3-serial
 bash:~/ apt-get install python3-pyqt5
-
 ```
+
+## pyinstaller
+```
+bash:~/ apt-get install python3-pip
+bash:~/ pip3 install pyinstaller
+```
+
+## make executable
+```
+bash:/foldername/ pyinstaller d302.py --onefile --windowed
+```
+
+# TODO
+It's quit a lot of work left -> Design and functionality
