@@ -325,7 +325,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="text_card_hex_7">
+      <widget class="QLineEdit" name="text_card_hex_6">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -350,7 +350,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="text_card_hex_6">
+      <widget class="QLineEdit" name="text_card_hex_7">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -577,13 +577,13 @@
            <string notr="true">background: white;</string>
           </property>
           <property name="inputMask">
-           <string/>
+           <string>000; </string>
           </property>
           <property name="text">
            <string/>
           </property>
           <property name="maxLength">
-           <number>10</number>
+           <number>3</number>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -608,7 +608,7 @@
            <string notr="true">background: white;</string>
           </property>
           <property name="inputMask">
-           <string/>
+           <string>0000000000; </string>
           </property>
           <property name="text">
            <string/>
@@ -816,12 +816,15 @@
            <string notr="true">background: white;</string>
           </property>
           <property name="inputMask">
-           <string extracomment="000"/>
+           <string extracomment="000">000; </string>
           </property>
           <property name="text">
            <string/>
           </property>
           <property name="maxLength">
+           <number>3</number>
+          </property>
+          <property name="cursorPosition">
            <number>3</number>
           </property>
           <property name="alignment">
@@ -847,12 +850,15 @@
            <string notr="true">background: white;</string>
           </property>
           <property name="inputMask">
-           <string/>
+           <string>000; </string>
           </property>
           <property name="text">
            <string/>
           </property>
           <property name="maxLength">
+           <number>3</number>
+          </property>
+          <property name="cursorPosition">
            <number>3</number>
           </property>
           <property name="alignment">
@@ -872,12 +878,15 @@
            <string notr="true">background: white;</string>
           </property>
           <property name="inputMask">
-           <string/>
+           <string>00000; </string>
           </property>
           <property name="text">
            <string/>
           </property>
           <property name="maxLength">
+           <number>5</number>
+          </property>
+          <property name="cursorPosition">
            <number>5</number>
           </property>
           <property name="alignment">
@@ -1088,7 +1097,6 @@
   <tabstop>text_card_hex_3</tabstop>
   <tabstop>text_card_hex_4</tabstop>
   <tabstop>text_card_hex_5</tabstop>
-  <tabstop>text_card_hex_7</tabstop>
   <tabstop>text_card_hex_6</tabstop>
   <tabstop>text_card_hex_8</tabstop>
   <tabstop>text_card_hex_9</tabstop>
@@ -1098,7 +1106,7 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="radioButtonGroup"/>
   <buttongroup name="portButtonGroup"/>
+  <buttongroup name="radioButtonGroup"/>
  </buttongroups>
 </ui>
