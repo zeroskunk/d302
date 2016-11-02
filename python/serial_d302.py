@@ -24,7 +24,8 @@ class d302():
         return hex_list_int
     
     def hex_list(self, read_line):
-        read_line = str(binascii.hexlify(read_line), 'ascii')
+        #read_line = str(binascii.hexlify(read_line), 'ascii')
+        read_line = str(binascii.hexlify(read_line))
         hex_list =  [read_line[i:i+2] for i in range(0, len(read_line), 2)]
         return hex_list
         
@@ -72,7 +73,6 @@ class d302():
         
     def read_message(self):
         #self.initial_message()
-        
         if self.ser.isOpen() == False:
             return False
         
@@ -82,7 +82,8 @@ class d302():
         answerString = self.ser.read(11)
         answerString = binascii.hexlify(answerString)
         self.ser.flushInput()
-        return str(answerString, 'ascii')
+        #return str(answerString, 'ascii')
+        return str(answerString)
         
     def write_message(self, hex, lock=False):
         self.initial_message()
@@ -98,9 +99,6 @@ class d302():
         checksumInt = self.calc_checksum(writeSeq+lockbit+hex)
         intList = self.int_list(writeSeq+lockSeq+hex)
         writeString = bytearray(intList)+bytearray([checksumInt, 0x03])
-        print(writeString)
-        print(intList)
-        print(checksumInt)
         self.ser.write(writeString)
         time.sleep(1)
         self.ser.flushInput()
