@@ -1,5 +1,6 @@
 import sys
 import serial_d302 as connect
+
 from PyQt5 import QtWidgets, QtCore, QtGui, uic
 
 class Filter(QtCore.QObject):
@@ -39,15 +40,23 @@ class D302ReaderApp(QtWidgets.QMainWindow, QtCore.QObject):
         self.text_w26_clientid.editingFinished.connect(lambda: self.edit_change(self.text_w26_clientid))
         self.text_w26_fc.editingFinished.connect(lambda: self.edit_change(self.text_w26_fc))
         self.text_w26_numbers.editingFinished.connect(lambda: self.edit_change(self.text_w26_numbers))
+        
+        self.ports_available = self.d302.serial_ports()
+        self.combo_port.addItems(self.ports_available)
+        print (self.ports_available[self.combo_port.currentIndex()])
 
 
         
         
     def connect_port(self):
+        '''
         if self.text_port.text():
             serial_answer = self.d302.open_port(self.text_port.text())
         else:
             serial_answer = self.d302.open_port()
+        '''
+        port_checked = self.ports_available[self.combo_port.currentIndex()]
+        serial_answer = self.d302.open_port(str(port_checked))
             
         if serial_answer:
             self.port_open_check.setChecked(True)

@@ -19,25 +19,24 @@
      <rect>
       <x>40</x>
       <y>20</y>
-      <width>361</width>
+      <width>383</width>
       <height>31</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QLineEdit" name="text_port">
-       <property name="styleSheet">
-        <string notr="true">background: white;</string>
-       </property>
-       <property name="text">
-        <string>/dev/ttyUSB0</string>
-       </property>
-      </widget>
+      <widget class="QComboBox" name="combo_port"/>
      </item>
      <item>
       <widget class="QCheckBox" name="port_open_check">
        <property name="enabled">
         <bool>false</bool>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>15</width>
+         <height>16777215</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true"/>
@@ -577,7 +576,7 @@
            <string notr="true">background: white;</string>
           </property>
           <property name="inputMask">
-           <string>000; </string>
+           <string>000</string>
           </property>
           <property name="text">
            <string/>
@@ -608,7 +607,7 @@
            <string notr="true">background: white;</string>
           </property>
           <property name="inputMask">
-           <string>0000000000; </string>
+           <string>0000000000</string>
           </property>
           <property name="text">
            <string/>
@@ -816,7 +815,7 @@
            <string notr="true">background: white;</string>
           </property>
           <property name="inputMask">
-           <string extracomment="000">000; </string>
+           <string extracomment="000">000</string>
           </property>
           <property name="text">
            <string/>
@@ -850,7 +849,7 @@
            <string notr="true">background: white;</string>
           </property>
           <property name="inputMask">
-           <string>000; </string>
+           <string>000</string>
           </property>
           <property name="text">
            <string/>
@@ -878,7 +877,7 @@
            <string notr="true">background: white;</string>
           </property>
           <property name="inputMask">
-           <string>00000; </string>
+           <string>00000</string>
           </property>
           <property name="text">
            <string/>
@@ -1081,7 +1080,6 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <tabstops>
-  <tabstop>text_port</tabstop>
   <tabstop>btn_port_open</tabstop>
   <tabstop>btn_port_close</tabstop>
   <tabstop>text_w26_clientid</tabstop>
