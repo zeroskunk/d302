@@ -1,4 +1,4 @@
-# d302
+># d302
 d302 serial rfid reader #python3#
 
 python with qtpython for reading and writing RFID Tags with a D302 reader
@@ -27,7 +27,7 @@ bash:/foldername/ pyinstaller d302.py --onefile --windowed
 ```
 ### on windows 32Bit Python QT installation
 ```
-c:\folderpath_to_script\pyinstaller --onefile --noconsole --win-private-assemblies --win-no-prefer-redirects --name d302w32 --specpath pyinstaller d302.py
+c:\folderpath_to_script\>pyinstaller --onefile --noconsole --win-private-assemblies --win-no-prefer-redirects --name d302w32 --specpath pyinstaller d302.py
 ```
 
 # TODO
