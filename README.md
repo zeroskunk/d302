@@ -25,6 +25,10 @@ bash:~/ pip3 install pyinstaller
 ```
 bash:/foldername/ pyinstaller d302.py --onefile --windowed
 ```
+### on windows 32Bit Python QT installation
+```
+c:\folderpath_to_script\pyinstaller --onefile --noconsole --win-private-assemblies --win-no-prefer-redirects --name d302w32 --specpath pyinstaller d302.py
+```
 
 # TODO
 It's quit a lot of work left -> Design and functionality
