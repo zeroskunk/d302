@@ -1,15 +1,18 @@
 import sys
+import window
 import serial_d302 as connect
 
 from PyQt5 import QtWidgets, QtCore, uic
 
 
-class D302ReaderApp(QtWidgets.QMainWindow, QtCore.QObject):
+class D302ReaderApp(QtWidgets.QMainWindow, QtCore.QObject, window.Ui_d302reader):
     def __init__(self, parent=None):
         #super().__init__(parent)
         super(self.__class__, self).__init__()
 
-        self.ui = uic.loadUi('window.ui', self)
+        #self.ui = uic.loadUi('window.ui', self)
+        self.setupUi(self)
+        
         self.d302 = connect.d302()
         self.d10_group.setEnabled(False)
         self.w26_group.setEnabled(False)
@@ -122,6 +125,7 @@ class D302ReaderApp(QtWidgets.QMainWindow, QtCore.QObject):
         self.fill_section_card(hex_string)
         self.fill_section_d10(hex_string)
         self.fill_section_w26(hex_string)
+
 
 app = QtWidgets.QApplication(sys.argv)
 dialog = D302ReaderApp()
