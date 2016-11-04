@@ -82,8 +82,8 @@ class d302():
         answerString = self.ser.read(11)
         answerString = binascii.hexlify(answerString)
         self.ser.flushInput()
-        #return str(answerString, 'ascii')
-        return str(answerString)
+        return str(answerString, 'ascii')
+        #return str(answerString)
         
     def write_message(self, hex, lock=False):
         self.initial_message()
@@ -102,7 +102,7 @@ class d302():
         self.ser.write(writeString)
         time.sleep(1)
         self.ser.flushInput()
-        return hex+str(checksumInt)
+        return hex+str(checksumInt).zfill(2)
         
     def serial_ports(self):
         if sys.platform.startswith('win'):

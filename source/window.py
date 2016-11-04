@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'window.ui'
+# Form implementation generated from reading ui file '.\window.ui'
 #
 # Created by: PyQt5 UI code generator 5.7
 #
@@ -11,7 +11,18 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_d302reader(object):
     def setupUi(self, d302reader):
         d302reader.setObjectName("d302reader")
-        d302reader.resize(437, 525)
+        d302reader.resize(429, 479)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(d302reader.sizePolicy().hasHeightForWidth())
+        d302reader.setSizePolicy(sizePolicy)
+        d302reader.setMinimumSize(QtCore.QSize(429, 479))
+        d302reader.setMaximumSize(QtCore.QSize(429, 16777215))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("d302.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        d302reader.setWindowIcon(icon)
+        d302reader.setDocumentMode(False)
         self.centralwidget = QtWidgets.QWidget(d302reader)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
@@ -61,11 +72,6 @@ class Ui_d302reader(object):
         self.text_card_hex.setReadOnly(False)
         self.text_card_hex.setPlaceholderText("")
         self.text_card_hex.setObjectName("text_card_hex")
-        self.message_box = QtWidgets.QTextEdit(self.centralwidget)
-        self.message_box.setEnabled(False)
-        self.message_box.setGeometry(QtCore.QRect(40, 450, 361, 41))
-        self.message_box.setStyleSheet("background: transparent; color:red;")
-        self.message_box.setObjectName("message_box")
         self.horizontalLayoutWidget_3 = QtWidgets.QWidget(self.centralwidget)
         self.horizontalLayoutWidget_3.setEnabled(False)
         self.horizontalLayoutWidget_3.setGeometry(QtCore.QRect(40, 330, 361, 31))
@@ -423,11 +429,10 @@ class Ui_d302reader(object):
         d302reader.setTabOrder(self.text_card_hex_6, self.text_card_hex_8)
         d302reader.setTabOrder(self.text_card_hex_8, self.text_card_hex_9)
         d302reader.setTabOrder(self.text_card_hex_9, self.port_open_check)
-        d302reader.setTabOrder(self.port_open_check, self.message_box)
 
     def retranslateUi(self, d302reader):
         _translate = QtCore.QCoreApplication.translate
-        d302reader.setWindowTitle(_translate("d302reader", "D302 Reader"))
+        d302reader.setWindowTitle(_translate("d302reader", "D302 Reader Version: __version__"))
         self.btn_port_open.setText(_translate("d302reader", "open Port"))
         self.btn_port_close.setText(_translate("d302reader", "close Port"))
         self.btn_card_read.setText(_translate("d302reader", "readCard"))
